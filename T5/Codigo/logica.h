@@ -5,7 +5,7 @@ inline uint16_t le16(const uint8_t *p) { return p[0] | (uint16_t(p[1]) << 8); }
 
 inline int ldSigned(const uint8_t *p) {
   uint16_t v = le16(p);
-  return (v & 0x8000) ? int(v & 0x7fff) : -int(v & 0x7fff);
+  return (v & 0x8000) ? int(v &   0x7fff) : -int(v & 0x7fff);
 }
 inline float wrap180(float a) {
   while (a > 180) a -= 360;
@@ -37,3 +37,4 @@ struct Confirmacion {
     }
   }
 };
+
